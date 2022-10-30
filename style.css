@@ -9,3 +9,19 @@
 #binkImg {
     flex-grow: 1;
 }
+
+#map {
+    display: grid;
+    grid-template-columns: repeat(20, 32px);
+}
+
+.tile {
+    background-image: url('./overworldtiles.png'); 
+    /* width: 16px; */
+    /* height: 16px; */
+    width: 32px; 
+    height: 32px; 
+    background-size: 614px 274px;
+    /* border: 1px solid red; */
+    image-rendering: pixelated;
+}
