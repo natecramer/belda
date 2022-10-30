@@ -61,6 +61,7 @@ let updateCounter = 0;
 // init
 updatePosition();
 let myTimeout = setTimeout(update, updateDelay);
+// document.querySelector('#music').play();
 
 // update ()
 function update() {
