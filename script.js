@@ -2,8 +2,8 @@ let tileData = [];
 
 const tileSize = 32;
 
-let x = 320;
-let y = 240;
+let x = 632;
+let y = 264;
 const playerSpeed = 8;
 
 let bink = document.querySelector('#binkDiv');
@@ -80,6 +80,10 @@ function setMapFromTileData(start_col, start_row) {
             idx = tileData[Math.floor(row * MAP_WIDTH) + col];
             let tile = document.createElement('div');
             tile.classList.add('tile');
+            // 18 appears as an empty tile (black)
+            if (idx === 18) {
+                tile.classList.add('empty');
+            }
             let tileCol = idx % 20; // 18;
             let tileRow = Math.floor(idx / 20);
             let x = (tileCol * 34) + 2; // (col * 17) + 1

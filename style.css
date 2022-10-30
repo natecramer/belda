@@ -2,12 +2,13 @@
     position: absolute;
     width: 32px;
     height: 32px;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     display: flex;
 }
 
 #binkImg {
     flex-grow: 1;
+    /* image-rendering: pixelated; */
 }
 
 #map {
@@ -19,9 +20,16 @@
     background-image: url('./overworldtiles.png'); 
     /* width: 16px; */
     /* height: 16px; */
-    width: 32px; 
-    height: 32px; 
+    width: 32px;
+    height: 32px;
     background-size: 614px 274px;
     /* border: 1px solid red; */
-    image-rendering: pixelated;
+    /* image-rendering: pixelated; */
+}
+
+.tile.empty {
+    background-image: none;
+    background-color: #000;
+    width: 32px;
+    height: 32px;
 }
