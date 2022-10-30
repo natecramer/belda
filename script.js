@@ -31,17 +31,18 @@ let inputMap = {
 
 
 function updatePosition() {
+    const SPEED = 4;
     if (input['right']) {
-        x += 1;
+        x += SPEED;
     }
     if (input['left']) {
-        x -= 1;
+        x -= SPEED;
     }
     if (input['down']) {
-        y += 1;
+        y += SPEED;
     }
     if (input['up']) {
-        y -= 1;
+        y -= SPEED;
     }
     bink.style.left = `${x}px`;
     bink.style.top = `${y}px`;
@@ -74,13 +75,13 @@ const MAP_WIDTH = 255;
 function setMapFromTileData(start_col, start_row) {
     const mapDiv = document.querySelector('#map');
     let idx = 0;
-    for (let row = start_row; row < start_row+20; row++) {
-        for (let col = 0; col < start_col+20; col++) {
+    for (let row = start_row; row < start_row+88; row++) {
+        for (let col = 0; col < start_col+256; col++) {
             idx = tileData[Math.floor(row * MAP_WIDTH) + col];
             let tile = document.createElement('div');
             tile.classList.add('tile');
-            let tileCol = idx % 18;
-            let tileRow = Math.floor(idx / 18);
+            let tileCol = idx % 20; // 18;
+            let tileRow = Math.floor(idx / 20);
             let x = (tileCol * 34) + 2; // (col * 17) + 1
             let y = (tileRow * 34) + 2;
             tile.style['background-position'] = `top -${y}px left -${x}px`;
@@ -113,6 +114,7 @@ xhr.onreadystatechange = function() {
         // tileData = [];
         let n = 0;
         tilesStrs.forEach(e => {
+            e = '0x' + e;
             n = parseInt(e);
             // if (!isNaN(n))
             if (n == undefined) {

@@ -12,7 +12,7 @@
 
 #map {
     display: grid;
-    grid-template-columns: repeat(20, 32px);
+    grid-template-columns: repeat(256, 32px);
 }
 
 .tile {
