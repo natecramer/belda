@@ -1,0 +1,11 @@
+#binkDiv {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border: 1px solid blue;
+    display: flex;
+}
+
+#binkImg {
+    flex-grow: 1;
+}
